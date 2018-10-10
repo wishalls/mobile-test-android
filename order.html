@@ -17,11 +17,11 @@
     <!-- <script type="application/javascript" src="./public/common/css/awesome.min.css"></script> -->
     <!-- <script type="application/javascript" src="./public/common/css/jquery-ui.css"></script> -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
-	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <link rel="stylesheet" href="./public/css/kmblstyle.css">
 
     <!-- google analytics -->
-    <script src="//assets.adobedtm.com/9433874690e84dc313e63e7f15d5323de8876549/satelliteLib-22614ab109f14b8775556185cb2b791e5cb38528.js"></script>
+
     <style type="text/css">
         /* For Firefox */
         input[type='number'] {
@@ -35,13 +35,16 @@
             -webkit-appearance: none;
             margin: 0;
         }
-        input, input:before, input:after {
-      -webkit-user-select: initial;
-      -khtml-user-select: initial;
-      -moz-user-select: initial;
-      -ms-user-select: initial;
-      user-select: initial;
-     } 
+
+        input,
+        input:before,
+        input:after {
+            -webkit-user-select: initial;
+            -khtml-user-select: initial;
+            -moz-user-select: initial;
+            -ms-user-select: initial;
+            user-select: initial;
+        }
     </style>
     <style type="text/css">
         #loader {
@@ -61,64 +64,12 @@
 <body>
     <div class="container card">
         <div>
-            <div class="home-banner">
-                <img style="width:100%;" src=".\public\img\top_band.jpg" alt="">
-                <div class="row">
-                    <div class="col-sm-2">
-                        <img style="width:100%;" src=".\public\img\rbl_logo.jpg" alt="">
-                    </div>
-                    <div class="col-sm-10"></div>
-                </div>
-                <div class="row" style="background-color: #002955; height: 30px; margin: 0%;  vertical-align: text-top;">
-                    <div class="col-sm-12">
-                        <span style="color: white; font-size: 18px; float: right; font-weight: bold;">Home Loan</span>
-                    </div>
-                </div>
-                <img style="width:100%;" src=".\public\img\Kotak_Home_Loan_Banner.jpg" alt="">
-                <h5 class="bannerHeader">Fill in the details and get in principle approval within minimum of 24 hours</h5>
-            </div>
+
         </div>
 
         <div class="row">
             <div class="col-sm-3 border-right border-default" style="font-size: x-small;">
-                <table class="table table-borderless side-panner">
-                    <tbody>
-                        <tr>
-                            <td valign="top" colspan="2">
-                                <h6 class="border-bottom border-danger">Our Home Loan Features</h6>
-                                <ul class="fa-ul">
-                                    <li>
-                                        <i class="fa-li fa fa-check-square"></i>Zero processing fee</li>
-                                    <li>
-                                        <i class="fa-li fa fa-check-square"></i>Attractive Interest Rates</li>
-                                    <li>
-                                        <i class="fa-li fa fa-check-square"></i>Convenient Loan Disbursal Process</li>
-                                    <li>
-                                        <i class="fa-li fa fa-check-square"></i>Simplified Documentation</li>
-                                    <li>
-                                        <i class="fa-li fa fa-check-square"></i>Insurance Options to cover your Home
-                                        loan</li>
-                                    <li>
-                                        <i class="fa-li fa fa-check-square"></i>Doorstep Service</li>
-                                    <li>
-                                        <i class="fa-li fa fa-check-square"></i>Tenure available upto 20 years for
-                                        Salaried and upto 15 years for Self Employed
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <!--  <tr class="table table-borderless" style="border:0px; background:none; cursor: pointer;color: #838383;">
-                            <td colspan="2" valign="top">
-                                <ul class="fa-ul">
-                                    <li>
-                                        <i class="fa-li fa fa-caret-right" style="color:#002955;"></i>
-                                        <p style="cursor:pointer;text-decoration:underline;" id="faq" onclick="javascript:openPopup(this);">Frequently Asked Questions</p>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr> -->
-                    </tbody>
-                </table>
+
 
             </div>
             <div class="col-sm-7" style="padding-top: 50px">
@@ -378,11 +329,6 @@
     <div class="col-sm-2">
     </div>
 
-    <footer>
-        <script type="text/javascript">
-            _satellite.pageBottom();
-        </script>
-    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <div id="loader" style="font-size:50px; color:red"></div>
@@ -415,46 +361,5 @@
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"> -->
 </body>
-<script type="text/javascript">
-    var dataLayer = {};
-
-    dataLayer.page = {};
-
-    var digitalData = {};
-
-    digitalData.page = [];
-
-    digitalData.page.pageinfo = [];
-
-    var pagename = "finfort/order";
-
-    digitalData.page.pageinfo.pageName = pagename;
-
-    digitalData.page.category = [];
-
-    var category = '';
-
-    digitalData.page.category.primaryCategory = category;
-
-    digitalData.website = [];
-
-    var language;
-
-    language = "English";
-
-    digitalData.website.language = language;
-
-    digitalData.web = [];
-
-    digitalData.web.identifier = "website";
-
-    dataLayer.page.title = pagename;
-
-    if (window._satellite && _satellite.getVisitorId() && _satellite.getVisitorId().getMarketingCloudVisitorID()) {
-
-        dataLayer.visitorId = _satellite.getVisitorId().getMarketingCloudVisitorID();
-
-    }
-</script>
 
 </html>
