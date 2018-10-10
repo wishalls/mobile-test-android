@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>KMBL-OCS</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css">
+    <!-- <script type="application/javascript" src="./public/common/css/bootstrab.min.css"></script> -->
+    <!--Font Awesome (added because you use icons in your prepend/append)-->
+    <!-- <script type="application/javascript" src="./public/common/css/awesome.min.css"></script> -->
+    <!-- <script type="application/javascript" src="./public/common/css/jquery-ui.css"></script> -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link rel="stylesheet" href="./public/css/kmblstyle.css">
+
+    <!-- google analytics -->
+    <script src="//assets.adobedtm.com/9433874690e84dc313e63e7f15d5323de8876549/satelliteLib-22614ab109f14b8775556185cb2b791e5cb38528.js"></script>
+    <style type="text/css">
+        /* For Firefox */
+        input[type='number'] {
+            -moz-appearance: textfield;
+        }
+
+        /* Webkit browsers like Safari and Chrome */
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input, input:before, input:after {
+      -webkit-user-select: initial;
+      -khtml-user-select: initial;
+      -moz-user-select: initial;
+      -ms-user-select: initial;
+      user-select: initial;
+     } 
+    </style>
+    <style type="text/css">
+        #loader {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.75) url('./public/img/ajax-loader-3.gif') no-repeat center center;
+            z-index: 10000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container card">
+        <div>
+            <div class="home-banner">
+                <img style="width:100%;" src=".\public\img\top_band.jpg" alt="">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img style="width:100%;" src=".\public\img\rbl_logo.jpg" alt="">
+                    </div>
+                    <div class="col-sm-10"></div>
+                </div>
+                <div class="row" style="background-color: #002955; height: 30px; margin: 0%;  vertical-align: text-top;">
+                    <div class="col-sm-12">
+                        <span style="color: white; font-size: 18px; float: right; font-weight: bold;">Home Loan</span>
+                    </div>
+                </div>
+                <img style="width:100%;" src=".\public\img\Kotak_Home_Loan_Banner.jpg" alt="">
+                <h5 class="bannerHeader">Fill in the details and get in principle approval within minimum of 24 hours</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 border-right border-default" style="font-size: x-small;">
+                <table class="table table-borderless side-panner">
+                    <tbody>
+                        <tr>
+                            <td valign="top" colspan="2">
+                                <h6 class="border-bottom border-danger">Our Home Loan Features</h6>
+                                <ul class="fa-ul">
+                                    <li>
+                                        <i class="fa-li fa fa-check-square"></i>Zero processing fee</li>
+                                    <li>
+                                        <i class="fa-li fa fa-check-square"></i>Attractive Interest Rates</li>
+                                    <li>
+                                        <i class="fa-li fa fa-check-square"></i>Convenient Loan Disbursal Process</li>
+                                    <li>
+                                        <i class="fa-li fa fa-check-square"></i>Simplified Documentation</li>
+                                    <li>
+                                        <i class="fa-li fa fa-check-square"></i>Insurance Options to cover your Home
+                                        loan</li>
+                                    <li>
+                                        <i class="fa-li fa fa-check-square"></i>Doorstep Service</li>
+                                    <li>
+                                        <i class="fa-li fa fa-check-square"></i>Tenure available upto 20 years for
+                                        Salaried and upto 15 years for Self Employed
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <!--  <tr class="table table-borderless" style="border:0px; background:none; cursor: pointer;color: #838383;">
+                            <td colspan="2" valign="top">
+                                <ul class="fa-ul">
+                                    <li>
+                                        <i class="fa-li fa fa-caret-right" style="color:#002955;"></i>
+                                        <p style="cursor:pointer;text-decoration:underline;" id="faq" onclick="javascript:openPopup(this);">Frequently Asked Questions</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col-sm-7" style="padding-top: 50px">
+                <form class="form-horizontal " name="ocsForm" action="/create" method="post" id="ocsForm">
+                    <!-- first -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row form-group required">
+                                <div class="col-sm-5 text-right">
+                                    <label class="control-label form-control-sm-2" for="firstname">First Name:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="text" class="inputBox form-control form-control-sm" id="firstname"
+                                        name="firstname" onkeypress="return validateKeypress(/[ A-Za-z\'\s]/);">
+                                    <p class="errorInfo" id="firstnameError" name="firstnameError"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row form-group required">
+                                <div class="col-sm-5 text-right">
+                                    <label class="control-label form-control-sm-2" for="lastname">Last Name:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="text" class="inputBox form-control form-control-sm" id="lastname" name="lastname"
+                                        onkeypress="return validateKeypress(/[ A-Za-z\'\s]/);">
+                                    <p class="errorInfo" id="lastnameError" name="lastnameError"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- second -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row form-group required">
+                                <div class="col-sm-5 text-right">
+                                    <label class="control-label form-control-sm-2" for="mobile">Mobile Number:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="tel" class="inputBox form-control form-control-sm" id="mobile" name="mobile">
+                                    <p class="errorInfo" id="mobileError" name="mobileError"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row form-group required">
+                                <div class="col-sm-5 text-right">
+                                    <label class="control-label form-control-sm-2" for="email">Email ID:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="email" class="inputBox form-control form-control-sm" id="email" name="email"
+                                        style="text-transform: lowercase">
+                                    <p class="errorInfo" id="emailError" name="emailError"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- third -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-5 text-right"></div>
+                                <div class="col-sm-7 text-right">
+                                    <p class="errorInfo" id="dobError" name="dobError"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row form-group required">
+                                <div class="col-sm-5 text-right">
+                                    <label class="control-label form-control-sm-2" for="dob">Date of Birth:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="input-group" id="dobBoxFull">
+                                        <!--  -->
+                                        <input type="text" class="inputBox form-control form-control-sm date" id="dob"
+                                            name="dob" title="dd/mm/yyyy" data-placement="left" tabindex="0">
+                                        <div class="inputBox input-group-prepend" id="dobBox">
+                                            <div class="input-group-text">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="row form-group required">
+                                <div class="col-sm-5 text-right">
+                                    <label class="control-label form-control-sm-2" for="pan">PAN:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="text" class="inputBox form-control form-control-sm" id="pan" name="pan"
+                                        onkeypress="return validatePANKeypress();" tabindex="0">
+                                    <p class="errorInfo" id="panError" name="panError"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fourth -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row form-group required">
+                                <div class="col-sm-5 text-right">
+                                    <label class="control-label form-control-sm-2" for="city">City:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="text" class="inputBox form-control form-control-sm" id="city" name="city"
+                                        onkeypress="return validateKeypress(/[ A-Za-z\'\s]/);">
+                                    <p class="errorInfo" id="cityError" name="cityError"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row form-group">
+                                <div class="col-sm-5 text-right">
+                                    <label class="control-label form-control-sm-2" for="pincode">PIN Code:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="text" class="inputBox form-control form-control-sm" id="pincode" name="pincode">
+                                    <p class="errorInfo" id="pincodeError" name="pincodeError"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fifth -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row form-group required">
+                                <div class="col-sm-5 text-right">
+                                    <label class="control-label form-control-sm-2" for="income">Income Segment:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <select class="selectBox form-control form-control-sm" id="income" name="income">
+                                        <!-- <option value="Salaried" disabled selected>Select Your Option</option> -->
+                                        <option value="Salaried Credit Evaluation">Salaried</option>
+                                        <option value="Self Employed Credit Evaluation">Self Employed</option>
+                                    </select>
+                                    <p class="errorInfo" id="incomeError" name="incomeError"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row form-group required">
+                                <div class="col-sm-5 text-right">
+                                    <label class="control-label form-control-sm-2" for="productCode">Product:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <select class="selectBox form-control form-control-sm" id="productCode" name="productCode">
+                                        <option value="Home Loan">Home Loan</option>
+                                        <option value="Loan against Property">Loan against Property</option>
+                                        <option value="Personal Loan">Personal Loan</option>
+                                        <option value="Business Loan">Business Loan</option>
+                                        <option value="Working capital">Working capital</option>
+                                        <option value="Education Loan">Education Loan</option>
+                                        <option value="Loan against Securities">Gold Loan</option>
+                                        <option value="Car Loan">Car Loan</option>
+                                        <option value="Commercial Vehicle">Commercial Vehicle</option>
+                                        <option value="Commercial Equipment">Commercial Equipment</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                    <p class="errorInfo" id="productCodeError" name="productCodeError"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- sixth -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row form-group required">
+                                <div class="col-sm-5 text-right">
+                                    <label class="control-label form-control-sm-2" for="loanAmount">Loan Amount:</label>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="text" class="inputBox form-control form-control-sm" id="loanamount"
+                                        name="loanamount">
+                                    <p class="errorInfo" id="loanAmountError" name="loanAmountError"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row form-group">
+                                <div class="col-sm-6">
+
+                                </div>
+                                <div class="col-sm-6">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- seventh -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row form-group">
+                                <div class="col-sm-6">
+
+                                </div>
+                                <div class="col-sm-6">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="submit" class="form-control btn btn-danger btn-sm btnFF" id="submitBtn"
+                                        value="Submit">
+                                </div>
+                                <div class="col-sm-6">
+                                    <a href="https://rcasprod.kotak.com/home-loan?se=ApplyNow&cp=MainBanner&ag=8888"
+                                        class="form-control btn btn-danger btn-sm btnFF" id="cancelBtn" style="text-transform: uppercase;">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- eighth -->
+                    <div class="row" style="padding: 20px;">
+                        <!-- <div class="col-sm-1"> </div> -->
+                        <div class="col-sm-12 border-bottom border-danger"> </div>
+                        <!-- <div class="col-sm-1"> </div> -->
+                    </div>
+                </form>
+
+                <!-- ninth -->
+                <form class="form-horizontal" action="/get" method="post" id="orderSearch">
+                    <div class="row" style="padding: 20px;">
+                        <div class="col-sm-4 text-right">
+                            <label class="control-label form-control-sm-2" for="ffOrderNumber">Existing Order Number:</label>
+                        </div>
+                        <div class="col-sm-4 input-group">
+                            <div class="inputBox input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-search"></i>
+                                </div>
+                            </div>
+                            <input type="text" class="inputBox form-control form-control-sm" id="ffOrderNumber" name="ffOrderNumber"
+                                onkeypress="return validateKeypress(/[ A-Za-z0-9]/);">
+                            <p class="errorInfo" id="ffOrderNumberError" name="ffOrderNumberError"></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="submit" class="form-control btn btn-danger btn-sm btnFF" id="ffOrderNumberBtn"
+                                value="Continue">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+
+    <footer>
+        <script type="text/javascript">
+            _satellite.pageBottom();
+        </script>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <div id="loader" style="font-size:50px; color:red"></div>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo "
+        crossorigin="anonymous "></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 "
+        crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js" type="text/javascript"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em "
+        crossorigin="anonymous "></script> -->
+
+    <script type="application/javascript" src="./public/common/js/jquery-3.3.1.slim.min.js"></script>
+    <script type="application/javascript" src="./public/common/js/jquery-1.12.4.js"></script>
+    <script type="application/javascript" src="./public/common/js/jquery-ui.js"></script>
+    <script type="application/javascript" src="./public/common/js/popper.min.js"></script>
+    <script type="application/javascript" src="./public/common/js/moment.min.js"></script>
+    <script type="application/javascript" src="./public/common/js/bootstrap.min.js"></script>
+
+    <script type="application/javascript" src="./public/js/form-script.js"></script>
+    <script type="application/javascript" src="./public/js/kmblscript.js"></script>
+    <script type="application/javascript" src="./public/js/order-search.js"></script>
+    <!-- <script type="application/javascript" src="./public/js/errorMessages.js"></script> -->
+    <!-- Include jQuery -->
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+
+    <!-- Include Date Range Picker -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"> -->
+</body>
+<script type="text/javascript">
+    var dataLayer = {};
+
+    dataLayer.page = {};
+
+    var digitalData = {};
+
+    digitalData.page = [];
+
+    digitalData.page.pageinfo = [];
+
+    var pagename = "finfort/order";
+
+    digitalData.page.pageinfo.pageName = pagename;
+
+    digitalData.page.category = [];
+
+    var category = '';
+
+    digitalData.page.category.primaryCategory = category;
+
+    digitalData.website = [];
+
+    var language;
+
+    language = "English";
+
+    digitalData.website.language = language;
+
+    digitalData.web = [];
+
+    digitalData.web.identifier = "website";
+
+    dataLayer.page.title = pagename;
+
+    if (window._satellite && _satellite.getVisitorId() && _satellite.getVisitorId().getMarketingCloudVisitorID()) {
+
+        dataLayer.visitorId = _satellite.getVisitorId().getMarketingCloudVisitorID();
+
+    }
+</script>
+
+</html>

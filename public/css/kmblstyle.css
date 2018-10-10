@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, Helvetica, sans-serif, Freesans, serif;
+    /* background: #e8e8e8 url('./public/img/body_bg.gif') center top repeat-y; */
+    color: #333;
+    background-color: #f2f2f2;
+    font-size: 12px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.side-panner {
+    font-size: 12px;
+    color: #002955;
+    /* background-image: url('./public/img/inner-page-bg.jpg'); */
+}
+
+.inputBox {
+    height: 22px;
+    font-size: 13px;
+}
+
+#income,
+#productCode {
+    height: 25px;
+    font-size: 13px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 0px 0px 0px 0px;
+}
+
+.btnFF {
+    background-color: #ed4223;
+    font-size: 11px;
+    height: 25px;
+    width: 80px;
+}
+
+#cancelBtn {
+    float: left;
+}
+
+#submitBtn {
+    float: right;
+}
+
+.ffOrderNumberError {
+    float: left;
+}
+
+.errorInfo {
+    display: none;
+    font-size: 10px;
+    color: red;
+}
+
+.form-group.required .control-label:after {
+    content: "*";
+    color: red;
+}
+
+.bannerHeader {
+    background-color: #f2f2f2;
+    color: red;
+    padding: 10px;
+    margin: 0px;
+}
+
+/* error, success pages styles*/
+
+.bgimg {
+    /* font-family: "Courier New", Courier, monospace; */
+    font-size: 14px;
+}
+
+.middle {
+    padding: 30px;
+    text-align: center;
+}
+
+/*
+.ui-datepicker {
+    background: #082487;
+    border: 1px solid #EEE;
+    color: #EEE;
+} */
+
+/* @media only screen and (max-width: 600px) {
+    body {
+        background-color: lightblue;
+    }
+} */
+
+@media (max-width: 750px) {
+    .mobileViewStyle {
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .btnFF {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #cancelBtn,
+    #submitBtn,
+    #ffOrderNumberBtn {
+        float: right;
+    }
+    .control-label
+    {
+        float: left;        
+    }
+}
+
+input {
+    text-transform: uppercase;
+}
+
+::-webkit-input-placeholder {
+    /* WebKit browsers */
+    text-transform: none;
+}
+
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    text-transform: none;
+}
+
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    text-transform: none;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    text-transform: none;
+}
+
+::placeholder {
+    /* Recent browsers */
+    text-transform: none;
+}
